@@ -11,7 +11,9 @@ jobs:
         with:
           dotnet-version: '3.1.x'
       - name: Instalamos dependencias de NET
-      - run: dotnet build
+        run: dotnet restore
+      - name: Compilamos
+        run: dotnet build
       - name: Ejecutamos las pruebas
         run: dotnet test
       - name: Publicar un release
